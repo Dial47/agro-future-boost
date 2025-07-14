@@ -8,6 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Core Colors - Agrolinx Brand */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -17,41 +18,87 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand Colors - Emerald Green */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 159 100% 75%;
+    --primary-dark: 160 100% 30%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Colors - Blue */
+    --secondary: 213 94% 68%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 213 100% 85%;
+    --secondary-dark: 213 94% 50%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent Colors - Amber */
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 0%;
+    --accent-light: 48 100% 67%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Status Colors */
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 43 96% 56%;
+    --warning-foreground: 0 0% 0%;
+    --error: 0 84% 60%;
+    --error-foreground: 0 0% 100%;
+    --info: 213 94% 68%;
+    --info-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Purple for partners */
+    --purple: 252 83% 75%;
+    --purple-dark: 252 83% 60%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* WhatsApp Green */
+    --whatsapp: 142 70% 49%;
+    --whatsapp-dark: 142 70% 35%;
+
+    /* Neutral Colors - Warm grays */
+    --muted: 20 6% 90%;
+    --muted-foreground: 25 5% 45%;
+
+    --border: 20 6% 90%;
+    --input: 20 6% 90%;
+    --ring: 160 84% 39%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
     --radius: 0.5rem;
 
+    /* Surface colors */
+    --surface-50: 20 20% 99%;
+    --surface-100: 20 14% 96%;
+    --surface-200: 20 10% 91%;
+    --surface-300: 20 9% 83%;
+    --surface-400: 25 5% 64%;
+    --surface-500: 25 5% 45%;
+    --surface-600: 25 5% 35%;
+    --surface-700: 24 9% 20%;
+    --surface-800: 24 9% 15%;
+    --surface-900: 24 9% 10%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--surface-50)) 0%, hsla(var(--primary), 0.05) 50%, hsla(var(--secondary), 0.05) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--surface-900) / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -101,5 +148,204 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-primary-dark;
+    @apply shadow-lg hover:shadow-xl;
+    @apply transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-outline-hero {
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply transition-all duration-300;
+  }
+
+  .btn-whatsapp {
+    @apply bg-whatsapp text-white hover:bg-whatsapp-dark;
+    @apply shadow-lg hover:shadow-xl;
+    @apply transition-all duration-300;
+  }
+
+  .btn-secondary-outline {
+    @apply border-2 border-secondary text-secondary bg-transparent;
+    @apply hover:bg-secondary hover:text-secondary-foreground;
+    @apply transition-all duration-300;
+  }
+
+  .btn-purple-outline {
+    @apply border-2 border-purple text-purple bg-transparent;
+    @apply hover:bg-purple hover:text-white;
+    @apply transition-all duration-300;
+  }
+
+  /* Badge Variants */
+  .badge-primary {
+    @apply bg-primary/10 text-primary border border-primary/20;
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-secondary {
+    @apply bg-secondary/10 text-secondary border border-secondary/20;
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-success {
+    @apply bg-success/10 text-success border border-success/20;
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-accent {
+    @apply bg-accent/10 text-accent border border-accent/20;
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-purple {
+    @apply bg-purple/10 text-purple border border-purple/20;
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* Hero Background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Surface Backgrounds */
+  .surface-50 { @apply bg-surface-50; }
+  .surface-100 { @apply bg-surface-100; }
+  .surface-200 { @apply bg-surface-200; }
+  .surface-700 { @apply bg-surface-700; }
+  .surface-800 { @apply bg-surface-800; }
+  .surface-900 { @apply bg-surface-900; }
+
+  /* Text Colors */
+  .text-primary-light { color: hsl(var(--primary-light)); }
+  .text-secondary-light { color: hsl(var(--secondary-light)); }
+  .text-accent-light { color: hsl(var(--accent-light)); }
+  .text-purple { color: hsl(var(--purple)); }
+  .text-purple-dark { color: hsl(var(--purple-dark)); }
+  .text-whatsapp { color: hsl(var(--whatsapp)); }
+  .text-surface-400 { color: hsl(var(--surface-400)); }
+  .text-surface-500 { color: hsl(var(--surface-500)); }
+  .text-surface-600 { color: hsl(var(--surface-600)); }
+  .text-surface-700 { color: hsl(var(--surface-700)); }
+
+  /* Border Colors */
+  .border-primary-light { border-color: hsl(var(--primary-light)); }
+  .border-secondary-light { border-color: hsl(var(--secondary-light)); }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  /* Special Effects */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Animations */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Floating animations */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.1); 
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1); 
+    }
+  }
+
+  /* Impact Card Hover Effects */
+  .impact-card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  /* Partner Card Gradients */
+  .partner-card-blue {
+    background: linear-gradient(135deg, hsl(var(--secondary) / 0.05), hsl(var(--secondary) / 0.1));
+    @apply border border-secondary/20;
+  }
+
+  .partner-card-green {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--primary) / 0.1));
+    @apply border border-primary/20;
+  }
+
+  .partner-card-purple {
+    background: linear-gradient(135deg, hsl(var(--purple) / 0.05), hsl(var(--purple) / 0.1));
+    @apply border border-purple/20;
+  }
+
+  /* Pillar Card Styles */
+  .pillar-card-blue {
+    background: linear-gradient(135deg, hsl(var(--secondary) / 0.05), hsl(var(--secondary) / 0.1));
+    @apply border border-secondary/10;
+  }
+
+  .pillar-card-green {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--primary) / 0.1));
+    @apply border border-primary/10;
+  }
+
+  .pillar-card-amber {
+    background: linear-gradient(135deg, hsl(var(--accent) / 0.05), hsl(var(--accent) / 0.1));
+    @apply border border-accent/10;
+  }
+
+  /* Form Styles */
+  .form-input-focus {
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary;
+  }
+
+  /* Quote Styles */
+  .quote-accent {
+    @apply border-l-4 border-primary bg-primary/5 p-6 rounded-r-lg;
   }
 }

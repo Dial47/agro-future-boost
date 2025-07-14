@@ -1,12 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from "@/components/agrolinx/Header";
+import { HeroSection } from "@/components/agrolinx/HeroSection";
+import { StatsSection } from "@/components/agrolinx/StatsSection";
+import { AboutSection } from "@/components/agrolinx/AboutSection";
+import { ImpactSection } from "@/components/agrolinx/ImpactSection";
+import { PillarsSection } from "@/components/agrolinx/PillarsSection";
+import { PartnersSection } from "@/components/agrolinx/PartnersSection";
+import { ContactSection } from "@/components/agrolinx/ContactSection";
+import { Footer } from "@/components/agrolinx/Footer";
+import { ScrollToTop } from "@/components/agrolinx/ScrollToTop";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <HeroSection />
+        <StatsSection />
+        <AboutSection />
+        <ImpactSection />
+        <PillarsSection />
+        <PartnersSection />
+        <ContactSection />
+      </main>
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 };
