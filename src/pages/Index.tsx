@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/agrolinx/HeroSection";
 import { StatsSection } from "@/components/agrolinx/StatsSection";
 import { AboutSection } from "@/components/agrolinx/AboutSection";
 import { ImpactSection } from "@/components/agrolinx/ImpactSection";
+import { GallerySection } from "@/components/agrolinx/GallerySection";
 import { PillarsSection } from "@/components/agrolinx/PillarsSection";
 import { PartnersSection } from "@/components/agrolinx/PartnersSection";
 import { ContactSection } from "@/components/agrolinx/ContactSection";
@@ -18,6 +19,7 @@ const Index = () => {
         <StatsSection />
         <AboutSection />
         <ImpactSection />
+        <GallerySection />
         <PillarsSection />
         <PartnersSection />
         <ContactSection />

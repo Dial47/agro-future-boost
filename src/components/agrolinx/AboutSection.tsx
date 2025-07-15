@@ -1,13 +1,22 @@
 import { Badge } from "@/components/ui/badge";
 import { Quote, Users2, Zap } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const AboutSection = () => {
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+  const { ref: visualRef, isVisible: visualVisible } = useScrollAnimation();
+
   return (
     <section id="nosotros" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div>
+          <div 
+            ref={contentRef}
+            className={`transition-all duration-1000 ${
+              contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            }`}
+          >
             <div className="mb-16">
               <Badge className="badge-secondary mb-6">Nuestra historia</Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -42,12 +51,17 @@ export const AboutSection = () => {
           </div>
           
           {/* Visual */}
-          <div className="space-y-6">
+          <div 
+            ref={visualRef}
+            className={`space-y-6 transition-all duration-1000 delay-300 ${
+              visualVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            }`}
+          >
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
               <img 
                 src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400&q=80"
                 alt="Equipo Agrolinx en granja porcina - Acompañamiento técnico"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
                 <p className="text-white text-sm font-medium">

@@ -11,14 +11,14 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="surface-900 text-white py-12">
+    <footer className="bg-surface-900 text-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center">
                 <Leaf className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold">Agrolinx</span>
@@ -26,7 +26,7 @@ export const Footer = () => {
             <p className="text-white/80 mb-4 leading-relaxed">
               Empresa familiar comprometida con el futuro del sector pecuario en Venezuela.
             </p>
-            <div className="p-4 surface-800 rounded-lg">
+            <div className="p-4 bg-surface-800 rounded-lg">
               <p className="text-primary-light font-medium italic">
                 "Creemos en el agro. Creamos futuro."
               </p>
