@@ -34,10 +34,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-foreground">Agrolinx</span>
+            <img 
+              src="/src/assets/agrolinx-logo.png" 
+              alt="Agrolinx Nutrición Avanzada" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}

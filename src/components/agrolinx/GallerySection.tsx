@@ -124,7 +124,7 @@ export const GallerySection = () => {
           {filteredImages.map((image, index) => (
             <div
               key={image.id}
-              className={`group relative bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer animate-fade-in-up`}
+              className={`group relative bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer animate-slide-up`}
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => openLightbox(image)}
             >
